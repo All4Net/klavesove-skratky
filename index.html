@@ -214,15 +214,15 @@
     <section id="practice" class="view" hidden>
       <header class="view-head">
         <h2>Praktický test</h2>
-        <p>Päť aplikácií, 32 úloh, cieľ pod 5 minút. Aplikácie prechádzaš jednu po druhej, po každej sa zapíše čas.</p>
+        <p>Päť aplikácií · 33 úloh · cieľ pod 5 minút</p>
       </header>
       <div class="panel flat">
 
-        <div class="tasks-head">
-          <h3>Úlohy v aplikáciách</h3>
-          <p class="small">Odškrtávanie je dobrovoľné, slúži len pre teba.</p>
-        </div>
-        <p class="rule"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg><span>Úlohy rob klávesovými skratkami, nie myšou.</span></p>
+        <ol class="guide" aria-label="Ako test prebieha">
+          <li><span class="gn">1</span><span class="gt"><b>Rob úlohy</b> v danej aplikácii <b>klávesovými skratkami</b>, nie myšou.</span></li>
+          <li><span class="gn">2</span><span class="gt">Keď aplikáciu dokončíš, <b>školiteľ zapíše čas</b> do poľa „Čas aplikácie“.</span></li>
+          <li><span class="gn">3</span><span class="gt">Stránka prejde na <b>ďalšiu aplikáciu</b>. Cieľ: všetkých päť <b>pod 5 minút</b>.</span></li>
+        </ol>
         <div class="practice-controls">
           <button id="toggleHints" class="btn" type="button">
             <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
@@ -236,6 +236,11 @@
         <h3><span class="sec-num">1</span><span class="sec-name">Windows<small>Poznámkový blok</small></span><span class="sec-time">cca 50 s</span></h3>
         <div class="small progress">Splnené: <b id="p1done">0</b> / <span id="p1total">0</span></div>
         <ul class="tasks">
+          <li class="task-item" data-shortcuts="Win → notepad → Enter">
+            <input type="checkbox" class="chk" />
+            <div>Otvor Poznámkový blok.</div>
+            <span class="hint"></span>
+          </li>
           <li class="task-item" data-shortcuts="">
             <input type="checkbox" class="chk" />
             <div>Napíš vetu: „Dnes je dôležitý deň“.</div>

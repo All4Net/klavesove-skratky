@@ -998,7 +998,7 @@
       wiz.inputs.push(input);
 
       const lab = el('label', 'step-time');
-      lab.append(el('span', null, 'Čas aplikácie'), input, el('small', null, 'napr. 145 = 1:45'));
+      lab.append(el('span', null, 'Čas aplikácie · zapisuje školiteľ'), input, el('small', null, 'napr. 145 = 1:45'));
       const prev = el('button', 'btn', '← Späť');
       prev.type = 'button'; prev.disabled = i === 0;
       prev.addEventListener('click', () => goStep(i - 1));

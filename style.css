@@ -798,3 +798,72 @@ body[data-standalone="true"] #practiceOfficial .meter-total:last-child { margin-
 /* vysvetlenie, čo je v programe pripravené */
 .step-note { margin: 4px 0 12px; padding: 10px 16px; border-radius: 14px; font-size: .96rem; color: #fff; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .3); border-left: 3px solid var(--orchid); }
 .step-note q { quotes: "„" "“"; font-style: italic; font-weight: 600; color: var(--blush); }
+
+/* ==========================================================
+   Optimalizácia pre rôzne obrazovky (1080p, 1080p so zväčšením 125 %, 2K)
+   - pätička kroku (čas + tlačidlá) je prilepená k spodnému okraju okna, takže je vždy vidieť
+   - na nižších oknách sa rozloženie zhustí
+   ========================================================== */
+:root { --topbar-h: 76px; }
+.wiz-steps { scroll-margin-top: calc(var(--topbar-h) + 12px); }
+
+.task-grid .step-foot {
+  position: sticky; bottom: 0; z-index: 5;
+  margin: 12px -18px -14px; padding: 12px 18px;
+  background: rgba(44, 14, 42, .96); border-top: 1px solid rgba(255, 255, 255, .22); border-radius: 0 0 24px 24px;
+  box-shadow: 0 -14px 18px -4px rgba(44, 14, 42, .85);          /* jemný prechod nad pätičkou, aby bolo vidno, že úlohy pokračujú */
+}
+
+/* úvod: nadpis sa prispôsobí aj výške okna */
+.home-hero h1 { font-size: clamp(3.2rem, min(1.6rem + 8.4vw, 17vh), 8.4rem); }
+.home-hero { min-height: min(560px, 66vh); }
+
+/* nižšie okná: 1080p (okno ~1000 px) aj 1080p so zväčšením 125 % (okno ~730 px) */
+@media (max-height: 1100px) {
+  :root { --topbar-h: 64px; }
+  .topbar-inner { padding-top: 8px; padding-bottom: 8px; }
+  .topbar .brand { padding: 4px 16px; }
+  .topbar .brand .logo { height: 30px; }
+  .topbar .crumb { padding: 7px 20px; }
+  .topbar .who-chip { padding: 8px 18px; }
+
+  .container { padding-top: 14px; padding-bottom: 40px; }
+  .view-head { margin-bottom: 12px; }
+  .view-head h2 { font-size: clamp(2rem, 1.2rem + 2.4vw, 3rem); }
+  .view-head p { margin-top: 4px; font-size: .98rem; }
+
+  .home-hero { padding: clamp(24px, 4vh, 48px) clamp(28px, 6vw, 80px); }
+  .home-lead { margin: 18px 0 20px; }
+  .steps-grid { margin-top: 14px; }
+  .step-card { min-height: 150px; padding: 20px 24px; }
+
+  #practice .panel { padding: 16px 20px; }
+  .tasks-head { display: none; }
+  .rule { margin: 0 0 10px; padding: 8px 16px; }
+  .practice-controls { margin: 0 0 8px; }
+  .practice-controls .btn { padding: 8px 18px; }
+  .wiz-steps { padding-bottom: 8px; margin: 0 0 4px; }
+  .wiz-step { height: 44px; }
+
+  .task-grid .section { padding: 12px 18px 14px; }
+  .task-grid .section h3 { min-height: 46px; }
+  .sec-num { width: 32px; height: 32px; }
+  .sec-name { font-size: 1.25rem; }
+  .task-grid ul.tasks { gap: 5px; margin-bottom: 12px; }
+  .task-grid .task-item { padding: 5px 12px; }
+  .task-grid .step-foot { margin: 8px -18px -14px; padding: 10px 18px; }
+  .step-time input { padding: 6px 14px; font-size: 1.2rem; }
+  .step-nav .btn { padding: 9px 22px; }
+}
+@media (max-height: 720px) {
+  .view-head p { display: none; }
+  .home-hero h1 { font-size: clamp(2.8rem, 15vh, 6rem); }
+}
+
+/* postup testu v troch krokoch */
+.guide { list-style: none; margin: 0 0 14px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; counter-reset: none; }
+.guide li { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 18px; background: rgba(255, 255, 255, .09); border: 1px solid rgba(255, 255, 255, .34); font-size: .96rem; line-height: 1.35; }
+.guide .gn { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--plum-bright), var(--plum)); border: 1px solid rgba(255, 255, 255, .55); font-family: var(--font-display); font-weight: 500; }
+.guide b { color: var(--blush); font-weight: 700; }
+@media (max-width: 900px) { .guide { grid-template-columns: 1fr; } }
+@media (max-height: 1100px) { .guide { margin-bottom: 10px; } .guide li { padding: 9px 14px; } }
