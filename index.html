@@ -214,7 +214,7 @@
     <section id="practice" class="view" hidden>
       <header class="view-head">
         <h2>Praktický test</h2>
-        <p>Päť aplikácií, 31 úloh, cieľ pod 5 minút. Aplikácie prechádzaš jednu po druhej, po každej sa zapíše čas.</p>
+        <p>Päť aplikácií, 32 úloh, cieľ pod 5 minút. Aplikácie prechádzaš jednu po druhej, po každej sa zapíše čas.</p>
       </header>
       <div class="panel flat">
 
@@ -222,6 +222,7 @@
           <h3>Úlohy v aplikáciách</h3>
           <p class="small">Odškrtávanie je dobrovoľné, slúži len pre teba.</p>
         </div>
+        <p class="rule"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg><span>Úlohy rob klávesovými skratkami, nie myšou.</span></p>
         <div class="practice-controls">
           <button id="toggleHints" class="btn" type="button">
             <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
@@ -235,6 +236,11 @@
         <h3><span class="sec-num">1</span><span class="sec-name">Windows<small>Poznámkový blok</small></span><span class="sec-time">cca 50 s</span></h3>
         <div class="small progress">Splnené: <b id="p1done">0</b> / <span id="p1total">0</span></div>
         <ul class="tasks">
+          <li class="task-item" data-shortcuts="">
+            <input type="checkbox" class="chk" />
+            <div>Napíš vetu: „Dnes je dôležitý deň“.</div>
+            <span class="hint"></span>
+          </li>
           <li class="task-item" data-shortcuts="Ctrl + Shift + →; Ctrl + X">
             <input type="checkbox" class="chk" />
             <div>Označ prvé slovo vety (celé slovo) a vystrihni ho.</div>
@@ -268,37 +274,37 @@
         <ul class="tasks">
           <li class="task-item" data-shortcuts="F7">
             <input type="checkbox" class="chk" />
-            <div>Vytvor v ľavom paneli priečinok „Testovanie“.</div>
+            <div>Na ľavom paneli (C:\) vytvor priečinok „Testovanie“.</div>
             <span class="hint"></span>
           </li>
-          <li class="task-item" data-shortcuts="Shift + F4">
+          <li class="task-item" data-shortcuts="Shift + F4; Alt + F4">
             <input type="checkbox" class="chk" />
-            <div>Vstúp do priečinka a vytvor v ňom textový súbor.</div>
+            <div>Vytvor textový súbor s názvom „test.txt“, napíš doň čokoľvek a zavri ho (ulož zmeny).</div>
             <span class="hint"></span>
           </li>
           <li class="task-item" data-shortcuts="Shift + F6">
             <input type="checkbox" class="chk" />
-            <div>Premenuj súbor na „koniec.txt“.</div>
+            <div>Premenuj súbor na „zzz_koniec.txt“.</div>
             <span class="hint"></span>
           </li>
-          <li class="task-item" data-shortcuts="F5">
+          <li class="task-item" data-shortcuts="F6">
             <input type="checkbox" class="chk" />
-            <div>Skopíruj súbor do druhého panela.</div>
+            <div>Premiestni súbor do pravého panela (C:\Download).</div>
             <span class="hint"></span>
           </li>
           <li class="task-item" data-shortcuts="Tab">
             <input type="checkbox" class="chk" />
-            <div>Prepni sa do druhého panela.</div>
+            <div>Prepni sa do pravého panela.</div>
             <span class="hint"></span>
           </li>
-          <li class="task-item" data-shortcuts="End; Insert; Home; Insert">
+          <li class="task-item" data-shortcuts="End; Delete">
             <input type="checkbox" class="chk" />
-            <div>Skoč na posledný súbor a označ ho, potom skoč na prvý súbor a označ aj ten.</div>
+            <div>Skoč na posledný súbor v zozname (je to náš súbor) a vymaž ho.</div>
             <span class="hint"></span>
           </li>
-          <li class="task-item" data-shortcuts="Delete">
+          <li class="task-item" data-shortcuts="Tab; Delete">
             <input type="checkbox" class="chk" />
-            <div>Vymaž označené súbory.</div>
+            <div>Prepni sa späť do ľavého panela a vymaž priečinok „Testovanie“ (pozor, nevymaž iný priečinok).</div>
             <span class="hint"></span>
           </li>
         </ul>
@@ -309,17 +315,17 @@
         <ul class="tasks">
           <li class="task-item" data-shortcuts="Ctrl + T">
             <input type="checkbox" class="chk" />
-            <div>Otvor nový tab.</div>
+            <div>Otvor nový tab a otvor v ňom stránku mojesidlo.sk.</div>
             <span class="hint"></span>
           </li>
-          <li class="task-item" data-shortcuts="Ctrl + Tab; Ctrl + Shift + Tab">
+          <li class="task-item" data-shortcuts="Ctrl + Shift + Tab">
             <input type="checkbox" class="chk" />
-            <div>Prepni sa na tab vpravo a potom späť na tab vľavo.</div>
+            <div>Prepni sa na prvý tab.</div>
             <span class="hint"></span>
           </li>
           <li class="task-item" data-shortcuts="Ctrl + číslo (1-8)">
             <input type="checkbox" class="chk" />
-            <div>Prejdi na prvý tab podľa jeho čísla.</div>
+            <div>Prepni sa na druhý tab podľa jeho poradia.</div>
             <span class="hint"></span>
           </li>
           <li class="task-item" data-shortcuts="Ctrl + F">
@@ -343,29 +349,19 @@
         <h3><span class="sec-num">4</span><span class="sec-name">Excel</span><span class="sec-time">cca 60 s</span></h3>
         <div class="small progress">Splnené: <b id="p4done">0</b> / <span id="p4total">0</span></div>
         <ul class="tasks">
-          <li class="task-item" data-shortcuts="Ctrl + A">
+          <li class="task-item" data-shortcuts="">
             <input type="checkbox" class="chk" />
-            <div>Označ celú tabuľku.</div>
-            <span class="hint"></span>
-          </li>
-          <li class="task-item" data-shortcuts="Ctrl + B">
-            <input type="checkbox" class="chk" />
-            <div>Klikni do bunky A1 a ztučni ju.</div>
+            <div>Napíš do bunky A1 text „Testovanie“.</div>
             <span class="hint"></span>
           </li>
           <li class="task-item" data-shortcuts="Ctrl + plus">
             <input type="checkbox" class="chk" />
-            <div>Klikni na číslo riadka 3 a vlož nad neho prázdny riadok.</div>
+            <div>Pridaj nový riadok.</div>
             <span class="hint"></span>
           </li>
-          <li class="task-item" data-shortcuts="Ctrl + mínus">
+          <li class="task-item" data-shortcuts="Ctrl + B">
             <input type="checkbox" class="chk" />
-            <div>Odstráň vložený riadok.</div>
-            <span class="hint"></span>
-          </li>
-          <li class="task-item" data-shortcuts="Ctrl + F">
-            <input type="checkbox" class="chk" />
-            <div>Nájdi v tabuľke číslo 14.</div>
+            <div>Vráť sa do bunky A1 a ztučni text.</div>
             <span class="hint"></span>
           </li>
           <li class="task-item" data-shortcuts="Ctrl + P">
@@ -373,9 +369,14 @@
             <div>Otvor náhľad tlače a zavri ho.</div>
             <span class="hint"></span>
           </li>
-          <li class="task-item" data-shortcuts="Ctrl + S">
+          <li class="task-item" data-shortcuts="Ctrl + F">
             <input type="checkbox" class="chk" />
-            <div>Ulož súbor.</div>
+            <div>Vyhľadaj slovo „Testovanie“.</div>
+            <span class="hint"></span>
+          </li>
+          <li class="task-item" data-shortcuts="Alt + F4">
+            <input type="checkbox" class="chk" />
+            <div>Zavri Excel bez uloženia.</div>
             <span class="hint"></span>
           </li>
         </ul>
@@ -384,14 +385,9 @@
         <h3><span class="sec-num">5</span><span class="sec-name">Ladesk</span><span class="sec-time">cca 55 s</span></h3>
         <div class="small progress">Splnené: <b id="p5done">0</b> / <span id="p5total">0</span></div>
         <ul class="tasks">
-          <li class="task-item" data-shortcuts="Ctrl + ↑; Ctrl + ↓">
+          <li class="task-item" data-shortcuts="">
             <input type="checkbox" class="chk" />
-            <div>Prechádzaj medzi dvoma otvorenými tickety (doprava a doľava).</div>
-            <span class="hint"></span>
-          </li>
-          <li class="task-item" data-shortcuts="Ctrl + Shift + Enter; Ctrl + Space">
-            <input type="checkbox" class="chk" />
-            <div>Otvor odpovedanie na ticket a zobraz ťaháky.</div>
+            <div>Otvor cvičný ticket.</div>
             <span class="hint"></span>
           </li>
           <li class="task-item" data-shortcuts="Ctrl + H">
@@ -406,12 +402,22 @@
           </li>
           <li class="task-item" data-shortcuts="Ctrl + O">
             <input type="checkbox" class="chk" />
-            <div>Odlož správu.</div>
+            <div>Odlož ticket na určitý čas, ale nepotvrdzuj to.</div>
+            <span class="hint"></span>
+          </li>
+          <li class="task-item" data-shortcuts="">
+            <input type="checkbox" class="chk" />
+            <div>Odstráň značku/flag (myšou).</div>
+            <span class="hint"></span>
+          </li>
+          <li class="task-item" data-shortcuts="Ctrl + Shift + Enter; Ctrl + Space">
+            <input type="checkbox" class="chk" />
+            <div>Odpovedaj na ticket a zobraz ťaháky.</div>
             <span class="hint"></span>
           </li>
           <li class="task-item" data-shortcuts="Ctrl + Q">
             <input type="checkbox" class="chk" />
-            <div>Zatvor okno aktuálneho ticketu.</div>
+            <div>Zatvor ticket.</div>
             <span class="hint"></span>
           </li>
         </ul>

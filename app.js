@@ -810,7 +810,7 @@
       sec.classList.toggle('complete', boxes.length > 0 && done === boxes.length);
       boxes.forEach((c) => c.closest('.task-item').classList.toggle('done', c.checked));
     });
-    if (save) store.set('practice', checks.map((c) => c.checked));
+    if (save && !CFG.STANDALONE) store.set('practice', checks.map((c) => c.checked));
   }
 
   sections.forEach((sec) => {
@@ -818,7 +818,7 @@
     bar.append(el('i'));
     $('.progress', sec).after(bar);
   });
-  const saved = store.get('practice', []);
+  const saved = CFG.STANDALONE ? [] : store.get('practice', []);
   checks.forEach((c, i) => { c.checked = !!saved[i]; c.addEventListener('change', () => updateProgress(true)); });
   $$('#practice .task-item').forEach((item) => {
     item.addEventListener('click', (e) => {
@@ -1097,6 +1097,8 @@
     wiz.d = [null, null, null, null, null];
     wiz.i = 0;
     wiz.inputs.forEach((inp) => { inp.value = ''; inp.classList.remove('invalid'); });
+    checks.forEach((c) => { c.checked = false; });                 // zaškrtnuté úlohy sa vynulujú
+    updateProgress(false);
     wizSync();
   }
 

@@ -790,3 +790,11 @@ body[data-standalone="true"] #practiceOfficial .meter-total:last-child { margin-
   .wiz-step .wn.time { padding: 0 6px; font-size: .74rem; }
   .wiz-step.current { flex: 0 0 auto; padding-right: 12px; }
 }
+
+/* pravidlo navrchu praktického testu */
+.rule { display: flex; align-items: center; gap: 12px; margin: 10px 0 14px; padding: 12px 20px; border-radius: 18px; font-weight: 600; color: #fff; background: rgba(255, 255, 255, .10); border: 1px solid rgba(255, 255, 255, .5); }
+.rule .icon { width: 24px; height: 24px; flex: none; color: var(--blush); }
+
+/* vysvetlenie, čo je v programe pripravené */
+.step-note { margin: 4px 0 12px; padding: 10px 16px; border-radius: 14px; font-size: .96rem; color: #fff; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .3); border-left: 3px solid var(--orchid); }
+.step-note q { quotes: "„" "“"; font-style: italic; font-weight: 600; color: var(--blush); }
