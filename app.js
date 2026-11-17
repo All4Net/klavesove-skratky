@@ -998,7 +998,7 @@
       wiz.inputs.push(input);
 
       const lab = el('label', 'step-time');
-      lab.append(el('span', null, 'Čas aplikácie · zapisuje školiteľ'), input, el('small', null, 'napr. 145 = 1:45'));
+      lab.append(el('span', null, 'Čas aplikácie'), input, el('small', null, 'napr. 145 = 1:45'));
       const prev = el('button', 'btn', '← Späť');
       prev.type = 'button'; prev.disabled = i === 0;
       prev.addEventListener('click', () => goStep(i - 1));
@@ -1366,6 +1366,11 @@
     renderOfficial('practical');
     if (HAS_FINAL) renderOfficial('final');
   }
+
+  // Enter v poli mena = rovnaké ako kliknutie na tlačidlo na úvode (pokračuje, alebo upozorní, že meno je povinné)
+  [empText, empSelect].forEach((f) => f.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && f.type !== 'select-one') { e.preventDefault(); $('#goNext').click(); }
+  }));
 
   /* ===== ŠTART ===== */
   paintMode();
